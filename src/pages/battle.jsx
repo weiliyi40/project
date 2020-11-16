@@ -11,7 +11,7 @@ export default class Battle extends React.Component {
     return (
       <Container className="text-center">
         <br /> <h3>Instructions</h3> <br />
-        
+        <Row>
           <Col>
             <p>Enter two Github users</p>
             <img src={pic1} style={{ boxShadow: '0 0 5px 3px #00000042' }} alt=" " />
