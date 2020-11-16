@@ -46,16 +46,16 @@
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.11.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "src/**/*.{js,jsx,less}": [
       "prettier --write",
       "git add"
     ],
-    "**/*.{js,jsx}": "eslint --ext .js"
+    "src/**/*.{js,jsx}": "eslint --ext .js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
