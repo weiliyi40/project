@@ -14,15 +14,15 @@ export default class Battle extends React.Component {
         <Row>
           <Col>
             <p>Enter two Github users</p>
-            <img src={pic1} style={{ boxShadow: '0 0 5px 3px #00000042' }} alt=" " />
+            {<img src={pic1} style={{ boxShadow: '0 0 5px 3px #00000042', width:'200px',height:'200px' }} alt=" " /> }
           </Col>
           <Col>
             <p>Battle</p>
-            <img src={pic2} style={{ boxShadow: '0 0 5px 3px #00000042' }} alt=" " />
+            { <img src={pic2} style={{ boxShadow: '0 0 5px 3px #00000042', width:'200px',height:'200px' }} alt=" " /> }
           </Col>
           <Col>
             <p>See the winner</p>
-            <img src={pic3} style={{ boxShadow: '0 0 5px 3px #00000042' }} alt=" " />
+            { <img src={pic3} style={{ boxShadow: '0 0 5px 3px #00000042', width:'200px',height:'200px' }} alt=" " /> }
           </Col>
         </Row><br />
         <h3>Players</h3> <br />
