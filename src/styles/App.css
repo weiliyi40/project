@@ -1,0 +1,20 @@
+.Nav{
+    width: 100px;
+    height: 50px;
+    margin-left: 20px;
+    line-height: 50px;
+    text-decoration: none;
+    font-size: large;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.Nav a{
+    text-decoration: none;
+    color: black;
+}
+.Nav a:hover,a:active {
+    color: white;
+    text-decoration: none;
+    background-color: #070981;
+    
+}

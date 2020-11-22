@@ -31,10 +31,28 @@ module.exports = function (env, argv) {
         },
         {
           test: /\.css$/,
+          include:[path.resolve(__dirname,'src/styles'),/node_modules/],
           use: [
-            'style-loader',
-            'css-loader'
+            "style-loader",
+            "css-loader"
           ]
+        },
+        {
+          test: /\.css$/,
+          exclude:[path.resolve(__dirname,'src/styles'),/node_modules/],
+          use:["style-loader","css-loader?modules"]
+        },
+        {
+          test: /\.less$/,
+          include:[path.resolve(__dirname,'src/styles'),/node_modules/],
+          use: [
+            "style-loader","css-loader","less-loader"
+          ]
+        },
+        {
+          test: /\.less$/,
+          exclude:[path.resolve(__dirname,'src/styles'),/node_modules/],
+          use:["style-loader","css-loader?modules","less-loader"]
         },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/,

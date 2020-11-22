@@ -10,7 +10,7 @@ export default class Battle extends React.Component {
   render() {
     return (
       <Container className="text-center">
-        <br /> <h3>Instructions</h3> <br />
+        <br /> <h3>GAME</h3> <br />
         <Row>
           <Col>
             <p>Enter two Github users</p>
