@@ -113,8 +113,8 @@ class App extends React.Component {
                   {error && <Alert variant="danger">{error.response.status} {error.response.statusText}</Alert>}
                 </div>
                 <div className="text-center">
-                  <Button onClick={this.loadMore} disabled={loading}> {loading && (
-                    <Spinner
+                  <Button  onClick={this.loadMore} disabled={loading}> {loading && (
+                    <Spinner 
                       as="span"
                       animation="grow"
                       size="sm"
