@@ -34,25 +34,25 @@ module.exports = function (env, argv) {
           include:[path.resolve(__dirname,'src/styles'),/node_modules/],
           use: [
             "style-loader",
-            "css-loader"
+            "css-loader","postcss-loader"
           ]
         },
         {
           test: /\.css$/,
           exclude:[path.resolve(__dirname,'src/styles'),/node_modules/],
-          use:["style-loader","css-loader?modules"]
+          use:["style-loader","css-loader?modules","postcss-loader"]
         },
         {
           test: /\.less$/,
           include:[path.resolve(__dirname,'src/styles'),/node_modules/],
           use: [
-            "style-loader","css-loader","less-loader"
+            "style-loader","css-loader","postcss-loader","less-loader"
           ]
         },
         {
           test: /\.less$/,
           exclude:[path.resolve(__dirname,'src/styles'),/node_modules/],
-          use:["style-loader","css-loader?modules","less-loader"]
+          use:["style-loader","css-loader?modules","postcss-loader","less-loader"]
         },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/,
