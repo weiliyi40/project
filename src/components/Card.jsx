@@ -10,7 +10,7 @@ const RepoCard = (props) => (
     <Card border="primary" style={{ marginTop: '8px', marginBottom: '8px' }}>
       <Card.Header className="text-center bg-white font-weight-bold">{props.no}</Card.Header>
       <Card.Body>
-        <Card.Img src={props.img} className="lazyload" />
+        <Card.Img src={props.img} className="lazyload" style={{ width: '170px' ,height: '170px'}} />
         <Card.Title className="text-center"><Card.Link href={props.url} className="text-danger" target="_blank">{props.title}</Card.Link></Card.Title>
         <ListGroup className="list-group-flush">
           <ListGroupItem className="bg-light">

@@ -3,6 +3,7 @@ import { HashRouter as Router, Link, Route } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
 import Popular from "../pages/popular.jsx";
 import Battle from "../pages/battle.jsx";
+import BattleResult from '../pages/battleResult.jsx'
 
 
 
@@ -17,7 +18,8 @@ class App extends Component {
                     </div>
                     <hr />
                     <Route path="/" exact component={Popular} ></Route>
-                    <Route path="/battle" component={Battle} ></Route>
+                    <Route path="/battle" exact component={Battle} ></Route>
+                    <Route path="/battle/:name" exact component={BattleResult} ></Route>
                 </div>
             </Router>
         )

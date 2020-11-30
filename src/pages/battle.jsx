@@ -45,17 +45,14 @@ export default class Battle extends React.Component {
     }
     this.setState({ input2Show: !input2Show })
   }
-  // Battle = () => {
-  //   const { battleShow } = this.state
-  //   if(!input1Show && !input2Show ){
-  //     this.setState({ battleShow: !battleShow })
-  //   }
-  // }
+  
+  routeChange = () => {
+    const { input1, input2 } = this.state
+    this.props.history.push({pathname:`/battle/result`,search:`playerOne=${input1}&playerTwo=${input2}`,state:input1})
+  }
   
   render() {
     const { input1, input2, input1Show, input2Show, battleShow} = this.state
-    console.log(input1 === '' ? 'true' : 'false', input1);
-    console.log(input2 === '' ? 'true' : 'false', input2);
 
     return (
       <Container className="text-center">
@@ -115,7 +112,7 @@ export default class Battle extends React.Component {
             </div>}
           </Col>
         </Row>
-         {battleShow ? <Button className="Battle">Battle</Button> : ' ' }
+         {battleShow ? <Button className="Battle" onClick={()=>{this.routeChange()}}>Battle</Button> : ' ' }
       </Container>
     );
   }
