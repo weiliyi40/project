@@ -2,7 +2,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { request } = require("http");
 const path = require("path");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const TerserPlugin =  require('terser-webpack-plugin');
 
 module.exports = function (env, argv) {
   const isEnvDevelopment = argv.mode === "development" || !argv.mode;
@@ -17,7 +19,7 @@ module.exports = function (env, argv) {
       : isEnvDevelopment && "cheap-module-source-map",
     entry: "./src/index.jsx",
     output: {
-      filename: "bundle.js",
+      filename: "[name].[contenthash:8].js",
       path: path.resolve(__dirname, "dist"),
     },
     // devServer: {
@@ -72,6 +74,11 @@ module.exports = function (env, argv) {
       ],
     },
     optimization:{
+      minimize:true,
+      minimize: [
+        new TerserPlugin(),
+        new OptimizeCssAssetsPlugin(),
+      ],
       splitChunks:{
         chunks:'all',
         name:true,
@@ -91,7 +98,21 @@ module.exports = function (env, argv) {
     },
     plugins: [
       new HtmlWebpackPlugin({
+        title: 'Github热⻔项⽬',
+        favicon: 'public/favicon.png',
         template: "public/index.html",
+        minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
+        },
       }),
     //   new webpack.NamedChunksPlugin(),
     //   new webpack.HotModuleReplacementPlugin(),

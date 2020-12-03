@@ -15,6 +15,7 @@ module.exports = function (env, argv) {
     entry: "./src/index.jsx",
     output: {
       filename: "bundle.js",
+      chunkFilename: '[name].bundle.js',
       path: path.resolve(__dirname, "dist"),
     },
     devServer: {
