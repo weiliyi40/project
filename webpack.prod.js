@@ -22,10 +22,7 @@ module.exports = function (env, argv) {
       filename: "[name].[contenthash:8].js",
       path: path.resolve(__dirname, "dist"),
     },
-    // devServer: {
-    //   contentBase: "./dist",
-    //   hot: true
-    // },
+  
     module: {
       rules: [
         {
@@ -114,8 +111,7 @@ module.exports = function (env, argv) {
         minifyURLs: true,
         },
       }),
-    //   new webpack.NamedChunksPlugin(),
-    //   new webpack.HotModuleReplacementPlugin(),
+ 
       new MiniCssExtractPlugin({
           filename:'[name].[contenthash:8].css',
           chunkFilename:'[name].[contenthash:8].chunk.css',          
